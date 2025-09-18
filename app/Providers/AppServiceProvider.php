@@ -23,5 +23,8 @@ class AppServiceProvider extends ServiceProvider
         Gate::define('staff-access', function ($user) {
             return $user->role === 'staff';
         });
+        Gate::define('all-access', function ($user) {
+            return in_array($user->role, ['staff', 'admin']);
+        });
     }
 }

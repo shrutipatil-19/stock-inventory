@@ -25,7 +25,7 @@
                 </a>
             </li>
 
-            @canany('staff-access', 'admin-access')
+            @canany('all-access')
             <li class="nav-item nav-category">Products</li>
             <li class="nav-item">
                 <a class="nav-link" data-bs-toggle="collapse" href="#emails" role="button" aria-expanded="false" aria-controls="emails">

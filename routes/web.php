@@ -13,9 +13,13 @@ Route::post('/login', [UserController::class, 'loginUser'])->name('loginUser');
 
 Route::post('/logout', [UserController::class, 'logout'])->name('logout');
 
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth', 'canGate:all-access'])->group(function () {
+
+    Route::get('/add-project', [ProductController::class, 'index'])->name('addProduct');
+});
+
+Route::middleware(['auth', 'canGate:admin-access'])->group(function () {
     Route::get('/', function () {
         return view('welcome');
     })->name('dashboard');
-    Route::get('/add-project', [ProductController::class, 'index'])->name('addProduct');
 });

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -14,7 +15,7 @@ Route::post('/login', [UserController::class, 'loginUser'])->name('loginUser');
 Route::post('/logout', [UserController::class, 'logout'])->name('logout');
 
 Route::middleware(['auth', 'canGate:all-access'])->group(function () {
-
+    Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
     Route::get('/add-project', [ProductController::class, 'index'])->name('addProduct');
 });
 

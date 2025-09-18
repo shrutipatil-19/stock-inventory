@@ -15,7 +15,7 @@
         <ul class="nav" id="sidebarNav">
             <!-- Admin Section (Show Everything) -->
 
-          
+
             <!-- <p>Admin Access is working!</p> -->
             <li class="nav-item nav-category">Main</li>
             <li class="nav-item">
@@ -24,8 +24,8 @@
                     <span class="link-title">Dashboard</span>
                 </a>
             </li>
-          
-           
+
+            @canany('staff-access', 'admin-access')
             <li class="nav-item nav-category">Products</li>
             <li class="nav-item">
                 <a class="nav-link" data-bs-toggle="collapse" href="#emails" role="button" aria-expanded="false" aria-controls="emails">
@@ -44,7 +44,7 @@
                     </ul>
                 </div>
             </li>
-           
+
             <li class="nav-item">
                 <a class="nav-link" data-bs-toggle="collapse" href="#uiComponents" role="button" aria-expanded="false" aria-controls="uiComponents">
                     <i class="link-icon" data-feather="mail"></i>
@@ -59,7 +59,7 @@
                         <li class="nav-item">
                             <a href="" class="nav-link">Stock Out</a>
                         </li>
-                         <li class="nav-item">
+                        <li class="nav-item">
                             <a href="" class="nav-link">Movement History</a>
                         </li>
                     </ul>
@@ -80,20 +80,21 @@
                         <li class="nav-item">
                             <a href="" class="nav-link">History per Product</a>
                         </li>
-                         <li class="nav-item">
+                        <li class="nav-item">
                             <a href="" class="nav-link">Stock Value Report</a>
                         </li>
                     </ul>
                 </div>
             </li>
+            @endcanany
 
-             <li class="nav-item">
+            @can('admin-access')
+            <li class="nav-item">
                 <a href="" class="nav-link">
                     <i class="link-icon" data-feather="box"></i>
                     <span class="link-title">Add Users</span>
                 </a>
             </li>
-          
             <!-- <p>Business Access is working!</p> -->
             <li class="nav-item nav-category">Suppliers</li>
             <li class="nav-item">
@@ -114,7 +115,7 @@
                     <span class="link-title">Settings</span>
                 </a>
             </li>
-           
+            @endcan
         </ul>
     </div>
 </nav>

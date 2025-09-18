@@ -17,6 +17,8 @@ Route::post('/logout', [UserController::class, 'logout'])->name('logout');
 Route::middleware(['auth', 'canGate:all-access'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
     Route::get('/add-project', [ProductController::class, 'index'])->name('addProduct');
+    Route::post('/add-project', [ProductController::class, 'create'])->name('createProduct');
+    Route::get('/list-project', [ProductController::class, 'list'])->name('listProduct');
 });
 
 Route::middleware(['auth', 'canGate:admin-access'])->group(function () {

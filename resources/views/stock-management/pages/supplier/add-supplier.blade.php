@@ -21,7 +21,7 @@
         </ul>
     </div>
     @endif
-    <form action="{{ route('storeUser') }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('createSupplier') }}" method="POST" enctype="multipart/form-data">
         @csrf
 
         <div class="row">
@@ -29,15 +29,17 @@
                 <div class="card">
                     <div class="card-body">
 
-                        <h6 class="card-title">Add Product</h6>
+                        <h6 class="card-title">Add Supplier</h6>
 
-                        <div class="mb-3 col-6">
-                            <label class="form-label">Name</label>
+                        <div class="mb-3">
+                            <label>Supplier Name</label>
                             <input type="text" name="name" class="form-control" required>
                         </div>
-                        <div class="mb-3 col-6">
+
+                        <div class="mb-3">
                             <label class="form-label">Email</label>
-                            <input type="email" name="email" class="form-control" required>
+                             <input type="email" name="email" class="form-control" required>
+
                         </div>
 
                     </div>
@@ -50,27 +52,23 @@
             <div class="col-md-8 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        <div class="mb-3 col-12">
-                            <label class="form-label">Role</label>
-                            <select name="role" class="form-control">
-                                <option value="admin">Admin</option>
-                                <option value="staff">Staff</option>
+                        <h6 class="card-title">Phone</h6>
+                        <div class="mb-3">
+                            <label class="form-label">Phone</label>
+                            <input type="text" class="form-control" name="phone" >
+                        </div>
 
-                            </select>
+                        <div class="mb-3">
+                            <label class="form-label">Address</label>
+                            <textarea id="summernote" name="address"></textarea>
                         </div>
-                        <div class="mb-3 col-6">
-                            <label class="form-label">Password</label>
-                            <input type="password" name="password" class="form-control" required>
-                        </div>
-                        <div class="mb-3 col-6">
-                            <label class="form-label">Confirm Password</label>
-                            <input type="password" name="password_confirmation" class="form-control" required>
-                        </div>
+
+                      
 
                     </div>
                 </div>
             </div>
-
+            
         </div>
         <button type="submit" class="btn btn-success">Submit</button>
     </form>

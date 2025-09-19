@@ -18,4 +18,8 @@ class Product extends Model
     protected $casts = [
         'image' => 'array',
     ];
+
+    public function stockIn(){
+        return $this->hasOne(Product::class);
+    }
 }

@@ -12,4 +12,7 @@ class Supplier extends Model
         'phone',
         'address',
     ];
+    public function stockIn(){
+        return $this->hasOne(Product::class);
+    }
 }

@@ -21,12 +21,12 @@
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Product name</th>
-                                    <th>SKU</th>
-                                    <th>Price</th>
+                                    <th>Product Id</th>
+                                    <th>User Id</th>
+                                    <th>Supplier Id</th>
                                     <th>Quantity</th>
 
-                                    <th>image</th>
+                                    <th>Reference No </th>
                                     <th>Created at</th>
                                 </tr>
                             </thead>
@@ -34,23 +34,12 @@
                                 @foreach ($products as $product)
                                 <tr>
                                     <td>{{ $product->id }}</td>
-                                    <td>{{ $product->name }}</td>
-                                    <td>{{ $product->sku }}</td>
-                                    <td>{{ $product->price }}</td>
+                                    <td>{{ $product->product_id }}</td>
+                                    <td>{{ $product->user_id }}</td>
+                                    <td>{{ $product->supplier_id }}</td>
                                     <td>{{ $product->quantity }}</td>
                                     <td>
-                                        @php
-                                        $images = json_decode($product->images, true);
-                                        $firstImage = $images[0] ?? null;
-                                        @endphp
-
-                                        @if (!empty($product->imagefile1))
-                                        <img src="{{ url('storage/app/public/' . $product->imagefile1) }}" alt="{{ $product->name }}" width="50" height="50" style="object-fit: cover; margin-right: 5px;">
-                                        @elseif (!empty($firstImage))
-                                        <img src="{{ url('storage/app/public/' . $firstImage) }}" alt="{{ $product->name }}" width="50" height="50" style="object-fit: cover; margin-right: 5px;">
-                                        @else
-                                        <img src="{{ url('storage/app/public/default.jpg') }}" alt="{{ $product->name }}" width="50" height="50" style="object-fit: cover; margin-right: 5px;">
-                                        @endif
+                                       {{ $product->reference_no }}
 
                                     </td>
                                     <td>{{ $product->created_at }}</td>

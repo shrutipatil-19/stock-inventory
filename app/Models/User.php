@@ -46,4 +46,8 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+    public function stockIn()
+    {
+        return $this->hasOne(Product::class);
+    }
 }

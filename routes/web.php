@@ -19,6 +19,9 @@ Route::middleware(['auth', 'canGate:all-access'])->group(function () {
     Route::post('/add-project', [ProductController::class, 'create'])->name('createProduct');
     Route::get('/list-project', [ProductController::class, 'list'])->name('listProduct');
     Route::get('/stock-in', [StockMovementsController::class, 'stockIn'])->name('stockIn');
+    Route::get('/add-stock-in', [StockMovementsController::class, 'addStockIn'])->name('addStockIn');
+    Route::post('/add-stock-in', [StockMovementsController::class, 'createStockIn'])->name('createStockIn');
+
 
     Route::get('/add-supplier', [SupplierController::class, 'index'])->name('addSupplier');
     Route::post('/add-supplier', [SupplierController::class, 'create'])->name('createSupplier');

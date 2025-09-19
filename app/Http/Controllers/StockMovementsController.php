@@ -23,9 +23,9 @@ class StockMovementsController extends Controller
         return view('stock-management.pages.stock-movement.add-stock-in', compact('products', 'suppliers'));
     }
 
-    public function createStockIn(Request $requset)
+    public function createStockIn(Request $request)
     {
-        $validate = $requset->validate([
+        $validate = $request->validate([
             'product_id'   => 'required|exists:products,id',
             'supplier_id'  => 'nullable|exists:suppliers,id',
             'quantity'     => 'required|integer|min:1',
@@ -34,20 +34,16 @@ class StockMovementsController extends Controller
         ]);
 
         $sockIn = StockIn::create([
-            'product_id' => $requset->product_id,
+            'product_id' => $request->product_id,
             'user_id' => Auth::id(),
-            'supplier_id' => $requset->supplier_id,
-            'quantity' => $requset->quantity,
-            'reference_no' => $requset->reference_no,
-            'notes' => $requset->notes
+            'supplier_id' => $request->supplier_id,
+            'quantity' => $request->quantity,
+            'reference_no' => $request->reference_no,
+            'notes' => $request->notes
         ]);
+        $product = Product::find($request->product_id);
+        $product->quantity += $request->quantity;
+        $product->save();
         return redirect()->route('addStockIn')->with('success', 'Stock in added successfully');
     }
 }
-
-        // 'product_id',
-        // 'user_id',
-        // 'supplier_id',
-        // 'quantity',
-        // 'reference_no',
-        // 'notes'

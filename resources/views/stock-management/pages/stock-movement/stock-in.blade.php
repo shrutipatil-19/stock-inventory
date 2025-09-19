@@ -34,9 +34,9 @@
                                 @foreach ($products as $product)
                                 <tr>
                                     <td>{{ $product->id }}</td>
-                                    <td>{{ $product->product_id }}</td>
-                                    <td>{{ $product->user_id }}</td>
-                                    <td>{{ $product->supplier_id }}</td>
+                                    <td>{{ $product->product->name }}</td>
+                                    <td>{{ $product->user->name }}</td>
+                                    <td>{{ $product->supplier->name }}</td>
                                     <td>{{ $product->quantity }}</td>
                                     <td>
                                        {{ $product->reference_no }}

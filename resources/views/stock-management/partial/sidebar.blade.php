@@ -90,7 +90,7 @@
 
             @can('admin-access')
             <li class="nav-item">
-                <a href="" class="nav-link">
+                <a href="{{ route('addUser') }}" class="nav-link">
                     <i class="link-icon" data-feather="box"></i>
                     <span class="link-title">Add Users</span>
                 </a>

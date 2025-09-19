@@ -21,7 +21,7 @@
         </ul>
     </div>
     @endif
-    <form action="{{ route('createProduct') }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('storeUser') }}" method="POST" enctype="multipart/form-data">
         @csrf
 
         <div class="row">
@@ -79,7 +79,7 @@
 
                         <div class="mb-3">
                             <label class="form-label">Image</label>
-                            <input type="file" name="images[]" multiple class="form-control">
+                            <input type="file" name="image[]" multiple class="form-control">
                         </div>
                         <!-- <div class="mb-3">
                             <label>Upload Images</label>

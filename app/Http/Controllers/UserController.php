@@ -60,4 +60,8 @@ class UserController extends Controller
 
         return redirect()->route('login');
     }
+
+    public function createUser(){
+        return view('stock-management.pages.user.add-user');
+    }
 }

@@ -25,37 +25,45 @@ class ProductController extends Controller
             'image.*'     => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
+        // if ($request->hasFile('image')) {
+        //     $imagePath = $request->file('image')->store('products', 'public');
+        // }
         $imagePaths = [];
-        if ($request->hasFile('image')) {
-            foreach ($request->file('image') as $img) {
+        if ($request->hasFile('images')) {
+            foreach ($request->file('images') as $img) {
                 $path = $img->store('products', 'public');
                 $imagePaths[] = $path;
             }
         }
 
         $product = Product::create([
-            'name' => $request->name,
-            'sku' => $request->sku,
+            'name'        => $request->name,
+            'sku'         => $request->sku,
             'description' => $request->description,
-            'price' => $request->price,
-            'quantity' => $request->quantity,
-            'image'       => !empty($imagePaths) ? json_encode($imagePaths) : null,
+            'price'       => $request->price,
+            'quantity'    => $request->quantity,
+            'image'       => !empty($imagePaths) ? json_encode($imagePaths) : json_encode([]), // save [] instead of null
         ]);
-        return response()->json([
-            'success' => true,
-            'message' => 'Product created successfully',
-            'data'    => $product,
-        ], 201);
+
+
+        return redirect()->route('listProduct');
+        // return response()->json([
+        //     'success' => true,
+        //     'message' => 'Product created successfully',
+        //     'data'    => $product,
+        // ], 201);
     }
 
     public function list()
     {
         $products = Product::all();
 
-        return response()->json([
-            'success' => true,
-            'message' => 'Product list fetched successfully',
-            'data'    => $products
-        ], 200);
+        return view('stock-management.pages.products.listProject', compact('products'));
+
+        // return response()->json([
+        //     'success' => true,
+        //     'message' => 'Product list fetched successfully',
+        //     'data'    => $products
+        // ], 200);
     }
 }

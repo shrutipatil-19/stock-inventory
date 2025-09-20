@@ -51,7 +51,8 @@ class StockMovementsController extends Controller
 
     public function listStockOut()
     {
-        return view('stock-management.pages.stock-movement.stock-out.list-stock-out');
+        $stockOuts = StockOut::get();
+        return view('stock-management.pages.stock-movement.stock-out.list-stock', compact('stockOuts'));
     }
     public function addStockOut()
     {
@@ -62,9 +63,9 @@ class StockMovementsController extends Controller
     public function storeStockOut(Request $request)
     {
         $validate = $request->validate([
-            'product_id' => 'required|exists:product,id',
-            'customer_id' => 'required|exists:customer,id',
-            'reason' => 'required|enum',
+            'product_id' => 'required|exists:products,id',
+            'customer_id' => 'required|exists:customers,id',
+            'reason' => 'required|in:sale,return,damage,transfer',
             'quantity'     => 'required|integer|min:1',
             'reference_no' => 'nullable|string|max:255',
             'notes' => 'nullable'

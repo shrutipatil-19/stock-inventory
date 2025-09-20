@@ -42,7 +42,7 @@
 
                         <div class="mb-3">
                             <label>Customers</label>
-                            <select name="supplier_id" class="form-control select2" multiple>
+                            <select name="customer_id" class="form-control select2" multiple>
                                 @foreach ($customers as $customer)
                                 <option value="{{ $customer->id }}">{{ $customer->name }}</option>
                                 @endforeach

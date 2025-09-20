@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\StockMovementsController;
@@ -34,4 +35,8 @@ Route::middleware(['auth', 'canGate:admin-access'])->group(function () {
     Route::get('/add-user', [UserController::class, 'createUser'])->name('addUser');
     Route::get('/register', [UserController::class, 'register'])->name('register');
     Route::post('/register', [UserController::class, 'storeUser'])->name('storeUser');
+
+    Route::get('/list-customer', [CustomerController::class, 'list'])->name('listCustomer');
+    Route::get('/add-customer', [CustomerController::class, 'create'])->name('createCustomer');
+    Route::post('/add-customer', [CustomerController::class, 'store'])->name('storeCustomer');
 });

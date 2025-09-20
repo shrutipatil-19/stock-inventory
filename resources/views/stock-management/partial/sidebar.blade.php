@@ -103,6 +103,12 @@
                     <span class="link-title">Add Supplier</span>
                 </a>
             </li>
+            <li class="nav-item mt-2">
+                <a href="{{ route('listCustomer') }}" class="nav-link">
+                    <i class="link-icon" data-feather="hash"></i>
+                    <span class="link-title">Customer</span>
+                </a>
+            </li>
             <li class="nav-item">
                 <a href="" class="nav-link">
                     <i class="link-icon" data-feather="hash"></i>

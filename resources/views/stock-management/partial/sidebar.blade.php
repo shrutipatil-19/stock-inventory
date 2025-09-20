@@ -36,10 +36,10 @@
                 <div class="collapse" data-bs-parent="#sidebarNav" id="emails">
                     <ul class="nav sub-menu">
                         <li class="nav-item">
-                            <a href="" class="nav-link">List Products</a>
+                            <a href="{{ route('listProduct') }}" class="nav-link">List Products</a>
                         </li>
                         <li class="nav-item">
-                            <a href="" class="nav-link">Add Products</a>
+                            <a href="{{ route('addProduct') }}" class="nav-link">Add Products</a>
                         </li>
                     </ul>
                 </div>
@@ -54,7 +54,7 @@
                 <div class="collapse" data-bs-parent="#sidebarNav" id="uiComponents">
                     <ul class="nav sub-menu">
                         <li class="nav-item">
-                            <a href="" class="nav-link">Stock In</a>
+                            <a href="{{ route('stockIn') }}" class="nav-link">Stock In</a>
                         </li>
                         <li class="nav-item">
                             <a href="" class="nav-link">Stock Out</a>
@@ -98,7 +98,7 @@
             <!-- <p>Business Access is working!</p> -->
             <li class="nav-item nav-category">Suppliers</li>
             <li class="nav-item">
-                <a href="" class="nav-link">
+                <a href="{{ route('addSupplier') }}" class="nav-link">
                     <i class="link-icon" data-feather="hash"></i>
                     <span class="link-title">Add Supplier</span>
                 </a>

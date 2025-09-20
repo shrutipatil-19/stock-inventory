@@ -2,13 +2,18 @@
 
 @section('page-content')
 <div class="page-content">
-
-    <nav class="page-breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Tables</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Stock in Table</li>
-        </ol>
-    </nav>
+    <div class="d-flex justify-content-between align-items-center">
+        <nav class="page-breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Tables</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Stock in Table</li>
+            </ol>
+        </nav>
+        <div>
+            <a href="{{ route('addStockIn') }}">
+                <button class="btn btn-primary"> Add Stock In</button></a>
+        </div>
+    </div>
 
     <div class="row">
         <div class="col-md-12 grid-margin stretch-card">
@@ -39,7 +44,7 @@
                                     <td>{{ $product->supplier->name }}</td>
                                     <td>{{ $product->quantity }}</td>
                                     <td>
-                                       {{ $product->reference_no }}
+                                        {{ $product->reference_no }}
 
                                     </td>
                                     <td>{{ $product->created_at }}</td>

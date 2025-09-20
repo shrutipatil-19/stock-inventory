@@ -20,6 +20,9 @@ class Product extends Model
     ];
 
     public function stockIn(){
-        return $this->hasOne(Product::class);
+        return $this->hasOne(StockIn::class);
+    }
+    public function stockOut(){
+        return $this->hasOne(StockOut::class);
     }
 }

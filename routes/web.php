@@ -23,6 +23,9 @@ Route::middleware(['auth', 'canGate:all-access'])->group(function () {
     Route::get('/add-stock-in', [StockMovementsController::class, 'addStockIn'])->name('addStockIn');
     Route::post('/add-stock-in', [StockMovementsController::class, 'createStockIn'])->name('createStockIn');
 
+    Route::get('/list-stock-out', [StockMovementsController::class, 'listStockOut'])->name('listStockOut');
+    Route::get('/add-stock-out', [StockMovementsController::class, 'addStockOut'])->name('addStockOut');
+    Route::post('/add-stock-out', [StockMovementsController::class, 'storeStockOut'])->name('storeStockOut');
 
     Route::get('/add-supplier', [SupplierController::class, 'index'])->name('addSupplier');
     Route::post('/add-supplier', [SupplierController::class, 'create'])->name('createSupplier');

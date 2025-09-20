@@ -15,4 +15,8 @@ class Customer extends Model
         'state',
         'country'
     ];
+    public function stockOut()
+    {
+        return $this->hasOne(StockOut::class);
+    }
 }

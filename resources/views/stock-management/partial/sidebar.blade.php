@@ -57,7 +57,7 @@
                             <a href="{{ route('stockIn') }}" class="nav-link">Stock In</a>
                         </li>
                         <li class="nav-item">
-                            <a href="" class="nav-link">Stock Out</a>
+                            <a href="{{ route('addStockOut') }}" class="nav-link">Stock Out</a>
                         </li>
                         <li class="nav-item">
                             <a href="" class="nav-link">Movement History</a>

@@ -9,7 +9,7 @@
                 <li class="breadcrumb-item active" aria-current="page">Stock Movement Table</li>
             </ol>
         </nav>
-     
+
     </div>
 
     <div class="row">
@@ -29,6 +29,7 @@
                                     <th>Quantity</th>
 
                                     <th>Reference No </th>
+                                  
                                     <th>Created at</th>
                                 </tr>
                             </thead>
@@ -40,10 +41,12 @@
                                     <td>{{ $product->user->name }}</td>
                                     <td>{{ ucfirst($product->type) }}</td>
                                     <td>{{ $product->quantity }}</td>
+
                                     <td>
                                         {{ $product->reference_no }}
 
                                     </td>
+                                   
                                     <td>{{ $product->created_at }}</td>
 
 

@@ -19,10 +19,16 @@ class Product extends Model
         'image' => 'array',
     ];
 
-    public function stockIn(){
+    public function stockIn()
+    {
         return $this->hasOne(StockIn::class);
     }
-    public function stockOut(){
+    public function stockOut()
+    {
         return $this->hasOne(StockOut::class);
+    }
+    public function stockMovements()
+    {
+        return $this->hasMany(stock_movements::class);
     }
 }

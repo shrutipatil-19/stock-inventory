@@ -38,7 +38,7 @@
                                     <td>{{ $product->id }}</td>
                                     <td>{{ $product->product->name }}</td>
                                     <td>{{ $product->user->name }}</td>
-                                    <td>{{ $product->type }}</td>
+                                    <td>{{ ucfirst($product->type) }}</td>
                                     <td>{{ $product->quantity }}</td>
                                     <td>
                                         {{ $product->reference_no }}

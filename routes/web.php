@@ -4,6 +4,7 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\StockMovementsController;
+use App\Http\Controllers\StockMovementController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -29,6 +30,8 @@ Route::middleware(['auth', 'canGate:all-access'])->group(function () {
 
     Route::get('/add-supplier', [SupplierController::class, 'index'])->name('addSupplier');
     Route::post('/add-supplier', [SupplierController::class, 'create'])->name('createSupplier');
+
+     Route::get('/stock-movement', [StockMovementController::class, 'index'])->name('stockMovement');
 });
 
 Route::middleware(['auth', 'canGate:admin-access'])->group(function () {

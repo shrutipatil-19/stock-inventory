@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('user_id');
             $table->enum('type', ['in', 'out']);
             $table->string('quantity');
-            $table->string('reference_id');
+            $table->string('reference_no');
             $table->string('notes');
             $table->timestamps();
         });

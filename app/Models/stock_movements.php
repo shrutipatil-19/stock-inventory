@@ -11,7 +11,7 @@ class stock_movements extends Model
         'user_id',
         'type',
         'quantity',
-        'reference_id',
+        'reference_no',
         'notes'
     ];
     public function product()
